@@ -3,7 +3,7 @@ echo "<br>";
 echo "<h2 align = 'center'>Please select a deck to view</h2>";
 echo "<html>";
     echo "<body>";
-        echo "<div align = 'center''>";
+        echo "<div align = 'center'>";
             echo "<select name='id'>";
 
                 $files = scandir("./decks/");
@@ -20,3 +20,7 @@ echo "<html>";
     echo "</body>";
 echo "</html>";
 ?>
+<br>
+<div align = 'center'>
+    <a href="functionTesting.html" >Return to Main Page</a>
+</div>
