@@ -8,18 +8,14 @@
 		
 		<h2 align = "center">Upload csv file</h2>
 		
-		<script>		</script>
-	
+
 		<div align = "center">
-		
-			<form action="uploadCsv.php" method="post">
-				<input type="file" id="csv-file" align="center">
-				<br>
-				<br>
-				<input type="submit" value="Upload document" name="submit">
+			<form enctype="multipart/form-data" action="uploadCsv.php" method="POST">
+				Choose a file to upload: <input name="csv-file" type="file" /><br />
+				<input type="submit" value="Upload File" />
 			</form>
-			
-		<div>
+		</div>
+
 
 	</body>	
 	
