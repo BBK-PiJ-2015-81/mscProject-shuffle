@@ -1,11 +1,7 @@
 <?php
 
-
-
 //header('Content-Encoding: UTF-8');
 //
-
-
 
 
 // Upload file
