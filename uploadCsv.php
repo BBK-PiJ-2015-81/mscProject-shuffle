@@ -15,7 +15,6 @@ $bom = pack("CCC", 0xef, 0xbb, 0xbf);
 
 while ( ($line = fgets($tmp)) !== false) {
 
-    echo "$line<br>";
     $card = $xml->addChild('card');
 
     //Add csv data
@@ -24,6 +23,8 @@ while ( ($line = fgets($tmp)) !== false) {
     if (0 == strncmp($line, $bom, 3)) {
         $line = substr($line, 3);
     }
+
+    //$line = utf8_decode($line);
 
     //Remove newline from end of string
     $line = str_replace(array("\n","\r"), '', $line);
@@ -34,7 +35,6 @@ while ( ($line = fgets($tmp)) !== false) {
     for ($i = 0; $i <3; $i++) {
         $card->addChild($headers[$i], $data[$i]);
     }
-
 }
 
 //Output formatted xml
@@ -44,7 +44,6 @@ $dom->preserveWhiteSpace = false;
 $dom->formatOutput = true;
 $dom->loadXML($xml->asXML());
 $dom->save($outputFilename);
-
 
 echo "<br>";
 
@@ -67,10 +66,10 @@ foreach ($files as $doc) {
     if (!in_array($doc, $ignore)) {
         echo $doc . "<br>";
     }
-
 }
 
 ?>
 
-//<br>
-//<a href="functionTesting.html">Return to Main Page</a>
+<br>
+<a href="./decks/output.xml">View xml</a><br>
+<a href="functionTesting.html">Return to Main Page</a>
